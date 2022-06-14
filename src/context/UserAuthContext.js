@@ -24,7 +24,7 @@ export function UserAuthContextProvider({ children }) {
   }
 
   function forgotpassword(email)  {
-    return sendPasswordResetEmail( email );
+    return sendPasswordResetEmail(auth, email, {url: 'http://localhost:3000/login', });
   }
   
 

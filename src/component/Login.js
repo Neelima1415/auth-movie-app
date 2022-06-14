@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/UserAuthContext";
+import img1 from '../images/login pic.png';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,10 +22,20 @@ const Login = () => {
       setError(err.message);
     }
   };
+   
+
 
   return (
-    <>
-      <div className="p-4 box">
+   <>
+    <div>
+      <div className=" mb-4 image" >
+         <img src={img1} alt=""  />
+      </div> 
+    </div> 
+
+    <div>
+        <div className="p-4 box">
+
         <h2 className="mb-3">Firebase Auth Login</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
@@ -63,8 +74,11 @@ const Login = () => {
       <div className="p-4 box mt-3 text-center">
         Don't have an account? <Link to="/signup">Sign up</Link>
       </div>
-    </>
+   </div>
+  </>
+
   );
+
 };
 
 export default Login;
