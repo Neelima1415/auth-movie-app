@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/UserAuthContext";
+import img3 from '../images/forgotPassword pic.png';
 
 
 const ForgotPassword = () => {
@@ -56,10 +57,15 @@ const ForgotPassword = () => {
 
   return (
     <>
-      <div className="p-4 box">
+       
+    <div className="container">
+      <div className="image" >
+         <img src={img3} alt=""  /> 
+      </div> 
+    </div> 
 
-      
-      {error && <Alert variant="danger">{error}</Alert>}
+      <div className="p-4 box">
+       {error && <Alert variant="danger">{error}</Alert>}
           {message && <Alert variant="success">{message}</Alert>}
 
 

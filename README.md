@@ -2,10 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-API stuff
+<!-- API stuff
+
 featured: 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=2baa49f27ec5d798d264b0a0b571d5c0&page=1'
 images: 'https://image.tmdb.org/t/p/w1280'
-search: 'https://api.themoviedb.org/3/search/movie?api_key=2baa49f27ec5d798d264b0a0b571d5c0&query='
+search: 'https://api.themoviedb.org/3/search/movie?&api_key=2baa49f27ec5d798d264b0a0b571d5c0&query=' -->
 
 ## Available Scripts
 

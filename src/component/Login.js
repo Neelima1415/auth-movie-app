@@ -4,6 +4,7 @@ import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/UserAuthContext";
 import img1 from '../images/login pic.png';
+import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -27,17 +28,24 @@ const Login = () => {
 
   return (
    <>
+    
     <div>
-      <div className=" mb-4 image" >
-         <img src={img1} alt=""  />
+      <div className="image" >
+         <img src={img1} alt=""  /> 
       </div> 
     </div> 
+  
+  <div className="d-flex align-items-center justify-content-center"
+    style={{ minHeight: "100px" }}>
 
-    <div>
-        <div className="p-4 box">
+    <div className="login">
 
-        <h2 className="mb-3">Firebase Auth Login</h2>
+      <div className="p-3 box">
+
+        <h1 className="mb-3">Firebase Auth Login </h1>
+
         {error && <Alert variant="danger">{error}</Alert>}
+
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
@@ -61,21 +69,27 @@ const Login = () => {
             </Button>
           </div>
           
-          <div>
+        <div>
           <p className="forgot-password text-right">
             <Link to={'/forgot'}>Forgot password? </Link>
           </p>
-          </div>
+        </div>
 
-        </Form>
-        <hr />
-        
-      </div>
+      </Form>
+
+      <hr />  
+      
+
       <div className="p-4 box mt-3 text-center">
+        
         Don't have an account? <Link to="/signup">Sign up</Link>
       </div>
+   
+      </div>
    </div>
-  </>
+  </div>
+  
+   </>
 
   );
 
