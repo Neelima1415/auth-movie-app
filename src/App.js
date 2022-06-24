@@ -7,11 +7,12 @@ import ForgotPassword from "./component/ForgotPassword";
 import Signup from "./component/Signup";
 import ProtectedRoute from "./component/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
+import SeatPicker from "./component/SeatPicker";
 
 //  style={{ width: "1500px" }}
   function App() {
 
-     return (
+  return (
     <Container>
       <Row>
         <Col>
@@ -27,7 +28,8 @@ import { UserAuthContextProvider } from "./context/UserAuthContext";
               />
               <Route path="/" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/forgot" element={<ForgotPassword/>} />          
+              <Route path="/forgot" element={<ForgotPassword/>} />     
+              <Route path="/Picker" element={<SeatPicker />} />     
             </Routes>
           </UserAuthContextProvider>
         </Col>

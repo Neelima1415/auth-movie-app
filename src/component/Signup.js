@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/UserAuthContext";
 import img2 from '../images/signup pic.png';
 import "./Signup.css";
+import { Container, Row, Col } from 'react-bootstrap'
 
 
 const Signup = () => {
@@ -27,23 +28,22 @@ const Signup = () => {
   
 
   return (
-    <>
 
     <div>
-      <div className="image1" >
+      <Container>
+        <Row> 
+        <Col className="image1">
+        <div>
          <img src={img2} alt= "" />
-      </div> 
-    </div>
-    
-      
-    <div className="d-flex align-items-center justify-content-center"
-    style={{ minHeight: "100px" }}>
+        </div>
+        </Col>
+        
 
-      <div className="signup">
+      <Col className="signup">
 
-      <div className="p-3 box">
-
-        <h1 className="mb-3">Firebase Auth Signup</h1>
+        <div className="p-2 mt-4 boxes">
+       
+        <h1 className="mb-2"> Signup Form</h1>
         {error && <Alert variant="danger">{error}</Alert>}
 
         
@@ -72,15 +72,15 @@ const Signup = () => {
         </Form>
       
       <hr />
-      <div className="p-4 box mt-3 text-center">
+      <div className="p-0 box text-center">
       
         Already have an account? <Link to="/">Log In</Link>
       </div>
-
-      </div>
-    </div>
-  </div> 
-     </>
+     </div>
+      </Col> 
+    </Row>
+  </Container>
+  </div>
   );
 };
 

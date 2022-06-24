@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/UserAuthContext";
 import img1 from '../images/login pic.png';
 import "./Login.css";
+import { Container, Row, Col } from 'react-bootstrap';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -27,27 +28,28 @@ const Login = () => {
 
 
   return (
-   <>
+   
+
+  <div>
     
-    <div>
-      <div className="image" >
+    <Container>
+      <Row>
+      <Col className="image" xs={12}>
+        <div>
          <img src={img1} alt=""  /> 
       </div> 
-    </div> 
-  
-  <div className="d-flex align-items-center justify-content-center"
-    style={{ minHeight: "100px" }}>
+      </Col>
 
-    <div className="login">
+     <Col className="login" xs={12}>
+     {/* mt-4 */}
+      <div className="p-4 box">
 
-      <div className="p-3 box">
-
-        <h1 className="mb-3">Firebase Auth Login </h1>
+        <h1 className="mb-4"> Login Form </h1>
 
         {error && <Alert variant="danger">{error}</Alert>}
 
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-4" controlId="formBasicEmail">
             <Form.Control
               type="email"
               placeholder="Email address"
@@ -69,28 +71,25 @@ const Login = () => {
             </Button>
           </div>
           
-        <div>
-          <p className="forgot-password text-right">
+       
+        <div className="forgot-password text-right">
             <Link to={'/forgot'}>Forgot password? </Link>
-          </p>
         </div>
-
-      </Form>
-
-      <hr />  
-      
-
-      <div className="p-4 box mt-3 text-center">
         
-        Don't have an account? <Link to="/signup">Sign up</Link>
-      </div>
+      </Form>
+     <hr />
+
+    <div className="p-1 box text-center">
+        
+      Don't have an account? <Link to="/signup">Sign up</Link>
+
+    </div>
    
       </div>
-   </div>
+    </Col>
+    </Row>
+  </Container>
   </div>
-  
-   </>
-
   );
 
 };

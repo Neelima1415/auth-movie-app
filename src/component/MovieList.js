@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 // import styled from "styled-components";
-
+import { Button } from "react-bootstrap";
 // import React from "react";
+import SeatPicker from "./SeatPicker";
+import Book from "./Book";
 
 import {
   MovieContainer,
@@ -11,18 +13,18 @@ import {
   MovieInfo
 } from './StyledMovieList';
 
-
-
-
 const MovieList = (props) => {
    const { Title, Year, imdbID, Type, Poster } = props.movie;
   return (
+    
   <MovieContainer>
     <CoverImage src={Poster} />
   <MovieName>{Title}</MovieName>
   <InfoColumn>
     <MovieInfo>Year: {Year}</MovieInfo>
-    <MovieInfo>Type: {Type}</MovieInfo>
+    {/* <MovieInfo>Type: {Type}</MovieInfo> */}
+          <Book />
+      
   </InfoColumn>
   </MovieContainer>
   );

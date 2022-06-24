@@ -4,14 +4,14 @@ export const MovieContainer = styled.div`
  display: flex;
  flex-direction: column;
  padding: 10px;
- width: 280px;
+ width: 240px;
  box-shadow: 0 3px 10px 0 #aaa;
  cursor: pointer;
   `;
 
 export const CoverImage = styled.img`
  object-fit: cover;
- height: 362px;
+ height: 240px;
 `;
 
 export const MovieName = styled.span`

@@ -4,7 +4,8 @@ import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/UserAuthContext";
 import img3 from '../images/forgotPassword pic.png';
-
+import { Container, Row, Col } from 'react-bootstrap';
+import "./ForgotPassword.css";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -56,21 +57,26 @@ const ForgotPassword = () => {
 
 
   return (
-    <>
+    
        
-    <div className="container">
-      <div className="image" >
+    <div>
+      <Container>
+        <Row>
+      <Col className="image3" >
+        <div>
          <img src={img3} alt=""  /> 
       </div> 
-    </div> 
+      </Col>
+    
+      
+      <Col className="forgot">
+      <div className="p-2 mt-4 boxes">
 
-      <div className="p-4 box">
+        <h1 className="mb-2"> Forgot Password </h1>
+
        {error && <Alert variant="danger">{error}</Alert>}
-          {message && <Alert variant="success">{message}</Alert>}
-
-
+        
         <Form onSubmit={handleSubmit}>
-          <h3> Forgot Password ? </h3>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <p>
@@ -93,14 +99,18 @@ const ForgotPassword = () => {
         </Form>
         <hr />
         
-      </div>
       <div className="p-4 box mt-3 text-center">
         <Link to="/"> Login? </Link>
       </div>
-    </>
+
+      </div>
+    </Col>
+      </Row>
+  </Container>
+</div>
   )
 
- }
+};
 
 
 export default ForgotPassword;

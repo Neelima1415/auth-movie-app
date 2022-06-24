@@ -3,9 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
-margin-left: 20px;
-margin-right: 20px;
-
 `;
 export const Header = styled.div`
 display: flex;
@@ -34,8 +31,9 @@ export const SearchBox = styled.div`
  width: 50%;
  `;
 export const SearchIcon = styled.img`
- width: 25px;
- height: 25px;
+ width: 30px;
+ height: 30px;
+ padding-top: 3px;
  `;
 
 export const SearchInput = styled.input`
@@ -50,9 +48,9 @@ export const MovieListContainer = styled.div`
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-padding: 30px;
+padding: 2px;
 gap: 24px;
-justify-content: space-between;
+justify-content: space-evenly;
 max-width: 1200px;
 `; 
 export const Placeholder = styled.img`
