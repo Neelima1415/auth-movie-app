@@ -7,6 +7,13 @@ export const MovieContainer = styled.div`
  width: 240px;
  box-shadow: 0 3px 10px 0 #aaa;
  cursor: pointer;
+ box-shadow: 0 8px 14px -6px ${(props) => props.shadow};
+ transition: ease-out 0.3s;
+  &:hover {
+    transform:scale(1.02);
+    box-shadow: 0 8px 26px -6px ${(props) => props.shadow};
+    
+  }
   `;
 
 export const CoverImage = styled.img`

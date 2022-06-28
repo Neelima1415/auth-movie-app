@@ -1,7 +1,6 @@
 import './SeatPicker.css'
 import React, { useState } from 'react'
 import clsx from 'clsx'
-// import Book from './Book';
 
 const movies = [
   {
@@ -30,15 +29,12 @@ const movies = [
     occupied: [10, 12, 50, 33, 28, 47],
   },
 ]
-
 const seats = Array.from({ length: 8 * 8 }, (_, i) => i)
-
 export default function SeatPicker() {
   const [selectedMovie, setSelectedMovie] = useState(movies[0])
   const [selectedSeats, setSelectedSeats] = useState([])
-
-  return (
   
+  return (
     <div className="App">
       <Movies
         movie={selectedMovie}
@@ -53,7 +49,6 @@ export default function SeatPicker() {
         selectedSeats={selectedSeats}
         onSelectedSeatsChange={selectedSeats => setSelectedSeats(selectedSeats)}
       />
-
       <p className="info">
         You have selected <span className="count">{selectedSeats.length}</span>{' '}
         seats for the price of{' '}
@@ -118,7 +113,6 @@ function Cinema({ movie, selectedSeats, onSelectedSeatsChange }) {
   return (
     <div className="Cinema">
       <div className="screen" />
-
       <div className="seats">
         {seats.map(seat => {
           const isSelected = selectedSeats.includes(seat)
@@ -137,13 +131,12 @@ function Cinema({ movie, selectedSeats, onSelectedSeatsChange }) {
                 isOccupied
                   ? null
                   : e => {
-                      if (e.key === 'Enter') {
-                        handleSelectedState(seat)
-                      }
+                    if (e.key === 'Enter') {
+                      handleSelectedState(seat)
                     }
+                  }
               }
             />
-           
           )
         })}
       </div>

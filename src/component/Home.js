@@ -1,14 +1,12 @@
 // import React, { useState, useEffect }from "react";
 import React, { useState } from "react";
 import Logout from './Logout';
+import { useUserAuth } from "../context/UserAuthContext";
 import { Component } from 'react';
-// import { Button } from "react-bootstrap";
-// import { useNavigate } from "react-router";
-// import { useUserAuth } from "../context/UserAuthContext";
 import MovieList from './MovieList';
-// import SeatPicker from './SeatPicker';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import styled from 'styled-components';
+
 import axios from "axios";
 import {
   Container,
@@ -29,7 +27,8 @@ function Home()  {
   const [timeoutId, updateTimeoutId] = useState();
   const [movieList, updateMovieList] = useState([]);
 
-
+  const { Auth } = useUserAuth();
+  console.log(Auth);
   const fetchData = async (searchString) => {
     const response= await axios.get(
       `http://www.omdbapi.com/?s=${searchString}&apikey=${API_KEY}`,
@@ -58,18 +57,22 @@ function Home()  {
            value={searchQuery} 
            onChange={onTextChange}/>
         </SearchBox>
-        <Logout />
+              <Logout />
+              
         </Header>
-
+         
         <MovieListContainer>
           {movieList?.length
            ? movieList.map((movie, index)=> (
            <MovieList key={index} movie={movie} />
            ))
             :"No Movie Search" } 
-          </MovieListContainer>  
+          
+          </MovieListContainer> 
+          
           
   </Container> 
+  
   
   )
   }

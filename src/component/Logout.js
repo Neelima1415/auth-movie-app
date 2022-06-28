@@ -23,9 +23,9 @@ const Logout = () => {
 
 return (
     <>     
-        <div className="btn" style={ {paddingTop: 5, display: 'flex', justifyContent: 'right' } }>
+        <div className="btn" style={ {paddingTop: 5, display: 'flex', justifyContent: 'right',paddingRight: 5 } }>
 
-         <Button variant="default"  style={{ color: "black", background: "white" }}
+         <Button variant="default"  style={{ color: "black", background: "white",}}
            onClick={handleLogout} >
           Log out
         </Button>

@@ -8,16 +8,17 @@ import Signup from "./component/Signup";
 import ProtectedRoute from "./component/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import SeatPicker from "./component/SeatPicker";
-
 //  style={{ width: "1500px" }}
   function App() {
-
+   
+   
   return (
     <Container>
       <Row>
         <Col>
           <UserAuthContextProvider>
             <Routes>  
+           
               <Route
                 path="/home"
                 element={
@@ -26,10 +27,21 @@ import SeatPicker from "./component/SeatPicker";
                   </ProtectedRoute>
                 }
               />
+               <Route
+                  path="/Picker"
+                  element={
+                    <ProtectedRoute>
+                      <SeatPicker
+                       />
+                    </ProtectedRoute>
+                  }
+                  />
+
               <Route path="/" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgot" element={<ForgotPassword/>} />     
-              <Route path="/Picker" element={<SeatPicker />} />     
+              
+             
             </Routes>
           </UserAuthContextProvider>
         </Col>
