@@ -31,7 +31,7 @@ function Home()  {
   console.log(Auth);
   const fetchData = async (searchString) => {
     const response= await axios.get(
-      `http://www.omdbapi.com/?s=${searchString}&apikey=${API_KEY}`,
+      `https://www.omdbapi.com/?s=${searchString}&apikey=${API_KEY}`,
       );
     
     updateMovieList(response.data.Search);
